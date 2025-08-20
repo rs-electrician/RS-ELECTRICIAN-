@@ -413,7 +413,7 @@
     </div>
   </section>
 
-  !-- ⭐ Feedback Section -->
+  <!-- ⭐ Feedback Section -->
 <section id="feedback">
   <h2>⭐ Customer Feedback</h2>
   <p style="text-align:center;">Please rate our service and share your experience</p>
@@ -422,9 +422,33 @@
     <div id="starRating" style="font-size:28px;color:gray;cursor:pointer;margin-bottom:10px;">
       <span onclick="setRating(1)">★</span>
       <span onclick="setRating(2)">★</span>
-      <span o
+      <span onclick="setRating(3)">★</span>
+      <span onclick="setRating(4)">★</span>
+      <span onclick="setRating(5)">★</span>
+    </div>
+    <input type="hidden" name="rating" id="ratingValue" required>
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email (optional)">
+    <textarea name="feedback" placeholder="Write your feedback here..." required></textarea>
+    <button type="submit">✨ Submit Feedback</button>
+  </form>
+</section>
 
-    <!-- 🌐 Footer -->
+<script>
+  function setRating(rating) {
+    document.getElementById("ratingValue").value = rating;
+    let stars = document.querySelectorAll("#starRating span");
+    stars.forEach((star, index) => {
+      if (index < rating) {
+        star.style.color = "gold";
+      } else {
+        star.style.color = "gray";
+      }
+    });
+  }
+</script>
+
+<!-- 🌐 Footer -->
 <footer style="background:#333;color:#fff;text-align:center;padding:20px;margin-top:40px;">
   <p>© 2025 RS Electrician Services. All Rights Reserved.</p>
   <p>
